@@ -1,6 +1,6 @@
 package ifpr.pgua.eic.bst.modelos;
 
-public class Aluno {
+public class Aluno implements Comparable<Aluno> {
     private int matricula;
     private String nome;
     private Data nascimento;
@@ -38,5 +38,10 @@ public class Aluno {
         str +=" - Data de Nascimento: "+nascimento.toString();
 
         return str;
+    }
+
+    @Override
+    public int compareTo(Aluno aluno) {
+        return Integer.compare(this.matricula, aluno.getMatricula());
     }
 }
