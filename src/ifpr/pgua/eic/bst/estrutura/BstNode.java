@@ -1,38 +1,37 @@
 package ifpr.pgua.eic.bst.estrutura;
-import ifpr.pgua.eic.bst.modelos.Aluno;
 
-public class BstNode {
-    private Aluno aluno;
-    private BstNode esquerda;
-    private BstNode direita;
+public class BstNode<T extends Comparable<T>> {
+    private T valor;
+    private BstNode<T> esquerda;
+    private BstNode<T> direita;
 
-    public BstNode(Aluno aluno) {
-        this.aluno = aluno;
+    public BstNode(T valor) {
+        this.valor = valor;
         this.esquerda = null;
         this.direita = null;
     }
 
-    public Aluno getAluno() {
-        return aluno;
+    public T getValor() {
+        return valor;
     }
 
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
+    public void setValor(T valor) {
+        this.valor = valor;
     }
 
-    public BstNode getEsquerda() {
+    public BstNode<T> getEsquerda() {
         return esquerda;
     }
 
-    public void setEsquerda(BstNode node) {
+    public void setEsquerda(BstNode<T> node) {
         this.esquerda = node;
     }
 
-    public BstNode getDireita() {
+    public BstNode<T> getDireita() {
         return direita;
     }
 
-    public void setDireita(BstNode node) {
+    public void setDireita(BstNode<T> node) {
         this.direita = node;
     }
 }
